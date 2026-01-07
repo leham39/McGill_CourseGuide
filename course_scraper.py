@@ -43,6 +43,9 @@ allClassEnd = time.perf_counter()
 print("Initial Scraping of All Classes took:", allClassEnd-allClassStart)
 print("Num Academic Units:", len(categories))
 
+outputFile = open("courses_raw.csv", "w", encoding='utf-8')
+outputFile.write("Academic Unit,Course Number,Course Title,Credits,Semester,Prerequisites,Restrictions,Offered By,Description\n")
+
 eachClassStart = time.perf_counter()
 #go through each unit and scrape the page for each class in the unit
 unitCount = 0
@@ -110,11 +113,13 @@ for academicUnit in categories:
                 restricts.append(restrict[index:index+8])
                 restrict = restrict[:index] + restrict[index+8:]
 
-        academicClass.extend([credits, semester, preReqs, restricts, unit, classDesc.get_text()[14:-1]])
+        academicClass.extend([str(credits), semester, ";".join(preReqs), ";".join(restricts), unit, classDesc.get_text()[14:-1]])
         if(round(100*classNum/len(classes[academicUnit])) % 10 == 0):
             print('.', end='', flush=True)
 
+        outputFile.write(academicUnit + "," + "||".join(academicClass).replace('\n', ' ').replace('\r', ' ').replace(',', ';').replace('||', ',') + "\n")
         #print(academicClass)
+        
 
     unitEnd = time.perf_counter()
 
