@@ -2,18 +2,28 @@ import requests as reqs
 from bs4 import BeautifulSoup
 from bs4 import Tag
 import time
+import math
 
 
 allClassStart = time.perf_counter()
 url = 'https://coursecatalogue.mcgill.ca/courses/'
 
-response = reqs.get(url)
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+}
+
+with reqs.get(url, headers=headers) as response:
+    response.raise_for_status()
+    html_data = response.text
 print()
 
-#print("Response Type:", type(response))
+print("Response Status:", response.status_code)
 print(response.url)
-html_data = response.text
-print("Response Data:", html_data)
+
+if(not html_data):
+    raise ValueError("No data received from the server")
+
+print("Response Data:", html_data[:500])  # Print first 500 chars to avoid too much output
 
 soup = BeautifulSoup(html_data, 'lxml')
 content = soup.find(attrs={'id':'textcontainer'}).findChild()
@@ -35,21 +45,27 @@ print("Num Academic Units:", len(categories))
 
 eachClassStart = time.perf_counter()
 #go through each unit and scrape the page for each class in the unit
+unitCount = 0
 for academicUnit in categories:
-    print(academicUnit, )
+    unitCount += 1
+    print("["+math.floor(unitCount/10 - 0.1)*"="+math.ceil((len(categories)-unitCount)/10)*"."+f"] {round(100*unitCount/len(categories), 1)}%", end=' ')
+    print(academicUnit, end=' ')
+
 
     unitStart = time.perf_counter()
+    classNum = 0
     for academicClass in classes[academicUnit]:
+        classNum += 1
 
         classUrl = f'https://coursecatalogue.mcgill.ca/courses/{academicUnit.lower()}-{academicClass[0].lower()}'
-        response = reqs.get(classUrl)
-
-        #print("Response Type:", type(response))
-        #print(response.url)
-        html_data = response.text
+        with reqs.get(classUrl, headers=headers) as response:
+            response.raise_for_status()
+            html_data = response.text
         #print("Response Data:", html_data)
 
         soup = BeautifulSoup(html_data, 'lxml')
+
+
         content = soup.find_all(attrs={'class':'row noindent'})
         classInfo = content[0].find_all('span', attrs={'class':'value'})
         classDesc = content[1]
@@ -95,9 +111,14 @@ for academicUnit in categories:
                 restrict = restrict[:index] + restrict[index+8:]
 
         academicClass.extend([credits, semester, preReqs, restricts, unit, classDesc.get_text()[14:-1]])
+        if(round(100*classNum/len(classes[academicUnit])) % 10 == 0):
+            print('.', end='', flush=True)
+
         #print(academicClass)
+
     unitEnd = time.perf_counter()
-    print(f"Done {academicUnit} in {unitEnd-unitStart}s")
+
+    print(f"Done {academicUnit} in {round(unitEnd-unitStart, 2)}s")
 
 eachClassEnd = time.perf_counter()
 print("DONE", eachClassEnd-eachClassStart)
