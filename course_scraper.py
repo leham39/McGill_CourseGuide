@@ -37,7 +37,7 @@ for child in content.children:
         if(not text[:4] in categories):
             classes[text[:4]] = []
             categories.append(text[:4])
-        classes[text[:4]].append(text[5:].split(' - '))
+        classes[text[:4]].append(text[5:].split(' - ')[:2])
 
 allClassEnd = time.perf_counter()
 print("Initial Scraping of All Classes took:", allClassEnd-allClassStart)
