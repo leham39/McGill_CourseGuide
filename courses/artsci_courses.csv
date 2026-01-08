@@ -1,0 +1,25 @@
+Academic Unit,Course Number,Course Title,Credits,Semester,Prerequisites,Restrictions,Offered By,Description
+BASC,201,Arts and Science Integrative Topics.,3,Fall 2025,,,Science (Interfaculty; B.A. & Sc.),Topics that integrate information from Arts & Science (e.g. biomedical ethics; history of science; scientific reasoning; military conflict and geography; philosophy of mind; etc.) to exemplify the benefits of applying scholarship from diverse areas to a problem.
+BASC,396,Undergraduate Research Project.,3,Fall 2025; Winter 2026,BASC 201,,Science (Interfaculty; B.A. & Sc.),Independent research project with a final written report.
+BASC,449,Integrative Research Project.,6,,BASC 201,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),Supervised integrative research project.
+BASC,449D1,Integrative Research Project.,3,Fall 2025,BASC 201,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),Supervised integrative research project.
+BASC,449D2,Integrative Research Project.,3,Winter 2026,BASC 449,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),See BASC 449D1 for course description.
+BASC,449N1,Integrative Research Project.,3,,BASC 201,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),Supervised integrative research project.
+BASC,449N2,Integrative Research Project.,3,,BASC 449,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),See BASC 449N1 for course description.
+COGS,396,Undergraduate Research Project.,3,Summer 2025; Fall 2025; Winter 2026; Summer 2026,,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),Independent research project with a final written report.
+COGS,401,Research Cognitive Science 1.,6,Summer 2025; Fall 2025; Winter 2026; Summer 2026,,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),Research project supervised by a McGill Faculty member.
+COGS,401D1,Research Cognitive Science 1.,3,Summer 2025; Fall 2025; Winter 2026,,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),Research project supervised by a McGill Faculty member.
+COGS,401D2,Research Cognitive Science 1.,3,Summer 2025; Fall 2025; Winter 2026,COGS 401,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),Research project supervised by a McGill Faculty member.
+COGS,401N1,Research Cognitive Science 1.,3,,,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),See COGS 401 for course description.
+COGS,401N2,Research Cognitive Science 1.,3,,COGS 401,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),See COGS 401 for course description.
+COGS,444,Honours Research.,6,Summer 2025; Fall 2025; Winter 2026; Summer 2026,,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),Honours research project.
+COGS,444D1,Honours Research.,3,Summer 2025; Fall 2025; Winter 2026,,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),Honours research project.
+COGS,444D2,Honours Research.,3,Summer 2025; Fall 2025; Winter 2026,COGS 444,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),See COGS 444D1 for course description.
+COGS,444N1,Honours Research.,3,Summer 2025; Fall 2025,,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),Honours research project.
+COGS,444N2,Honours Research.,3,Winter 2026; Summer 2026,COGS 444,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),See COGS 444N1 for course description.
+EXTL,EXAS,Exchange Term Away-AR&SC,0,Fall 2025; Winter 2026,,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),
+EXTL,IPAS,Internship Term.,0,Fall 2025; Winter 2026,,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),
+EXTL,IUAS,Inter-University Transfer.,0,,,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),
+EXTL,LAAS,Leave of Absence-Arts&Science,0,,,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),
+EXTL,TAAS,Term Away-Arts & Science.,0,Winter 2026,,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),
+REGN,WDAS,Withdrawn from the University.,0,,,,Arts & Science Admin (Shared) (Interfaculty; B.A. & Sc.),
