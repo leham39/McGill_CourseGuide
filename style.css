@@ -1,4 +1,45 @@
 body {
     background-color: #05204f;
     font-family: Arial, Helvetica, sans-serif;
+    color: #dddddd;
+}
+
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+input {
+    font-size: 1.25rem;
+}
+
+.course-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100%, 100%));
+    margin-top: 0rem;
+}
+.card {
+    background-color: #29347d;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.card:hover {
+    background-color: #3b4a9c;
+}
+.card > .header {
+    font-weight: bold;
+}
+.card > .body {
+    font-size: .875rem;
+}
+.card > .button {
+    font-size: .875rem;
+    color: #aaaaaa;
+}
+
+.hide {
+    display: none;
 }

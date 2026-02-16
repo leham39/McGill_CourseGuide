@@ -3,12 +3,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <h1>McGill Course Tool</h1>
     <label for="faculty">Select the faculty the course is in:</label>
     <form autocomplete="on">
-        <select name="faculty" id="faculty">
+        <select name="faculty" id="faculty" onchange="loadFacultyCourses(this.value)">
+            <option value="" id="initialOption">Select a faculty</option>
             <option value="arts">Arts</option>
             <option value="dentistry">Dentistry</option>
             <option value="education">Education</option>
@@ -21,10 +23,17 @@
             <option value="science">Science</option>
         </select>
     </form>
-    <form>
+    <div class="search-wrapper">
         <label for="course">Enter the course code or name:</label>
-        <input type="text" id="course" name="course">
-    </form>
-
-    <div></div>
+        <input type="search" id="course" name="course">
+    </div>
+    <div class="course-cards" id="course-list">
+        <template course-card-template>
+            <div class="card">
+                <div class="header">Course Code</div>
+                <div class="body">Course Title</div>
+                <a href="#" class="button">Course Page</a>
+            </div>
+        </template>
+    </div>
 </body>
