@@ -1,7 +1,12 @@
+
 body {
     background-color: #05204f;
     font-family: Arial, Helvetica, sans-serif;
     color: #dddddd;
+}
+
+.course-search {
+    width: 100%;
 }
 
 .search-wrapper {
@@ -10,8 +15,26 @@ body {
     gap: 0.25rem;
 }
 
+select {
+    font-size: 1.05rem;
+    background-color: #29347d;
+    color: #dddddd;
+    border: none;
+    padding: 0.5em;
+}
+
 input {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    background-color: #29347d;
+    color: #dddddd;
+    border: none;
+    padding: 0.5em;
+}
+input:focus {
+    outline: none;
+}
+input:disabled {
+    background-color: #4e536a;
 }
 
 .course-cards {
@@ -42,4 +65,14 @@ input {
 
 .hide {
     display: none;
+}
+
+@media (min-width: 1000px) {
+    .course-search {
+        width: 30%;
+        margin-left: 1rem;
+    }
+    .faculty-select {
+        margin-left: 1rem;
+    }
 }

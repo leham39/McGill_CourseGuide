@@ -40,6 +40,8 @@ function loadFacultyCourses(faculty) {
             const csv = csvText.split('\n').map(row => row.split(','));
                 document.getElementById('course-list').innerHTML = ''; // Clear existing courses
                 document.getElementById('initialOption').style.display = 'none';
+                courseInput.removeAttribute('disabled');
+                courseInput.placeholder = "Search courses...";
             if (validateCSV(csv)) {
                 courses = csv.slice(1, -1).map(row => {
                     const courseCard = courseCardTemplate.content.cloneNode(true).children[0];
